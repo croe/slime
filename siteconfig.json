@@ -1,13 +1,13 @@
 {
     "common" : {
         "id" : 1,
-        "url" : "slime.github.io",
+        "url" : "http://croe.github.io/slime",
         "title" : "SLIME - Flexible Framework For Static Webpage",
         "keywords" : "javascript",
         "description" : "Flexible Framework For Static Webpage",
         "ogtitle" : "SLIME - Flexible Framework For Static Webpage",
         "ogdescription" : "Flexible Framework For Static Webpage",
-        "ogurl" : "slime.github.io",
+        "ogurl" : "http://croe.github.io/slime",
         "ogimage" : "/common/images/ogpimage.png",
         "ogtype" : "website"
     },
