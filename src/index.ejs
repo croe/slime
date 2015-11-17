@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="ja" class="ie ie8" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns#"><![endif]-->
+<!--[if IE 9]><html lang="ja" class="ie ie9" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns#"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns#"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="ja">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<%= common.description %>">
+    <meta name="keywords" content="<%= page.keywords %>">
+    <meta property="og:title" content="<%= common.ogtitle %>">
+    <meta property="og:description" content="<%= page.ogdescription %>">
+    <meta property="og:url" content="<%= common.ogurl %>">
+    <meta property="og:image" content="<%= common.ogimage %>">
+    <meta property="og:type" content="<%= common.ogyype %>">
+    <title><%= common.title %></title>
+    <link rel="canonical" href="">
+    <link href="" rel="alternate" hreflang="ja">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!--  stylesheet  -->
+    <link rel="stylesheet" href="/common/styles/styles.css">
+    <!--  modernizr -->
+    <script src="/common/scripts/vendor/modernizr.js"></script>
+</head>
+<body>
+<% include ../src/common/ejs_include/_header.ejs %>
+	<h1>SLIME</h1>
+	<p>Flexible framework for static webpage</p>
+<% include ../src/common/ejs_include/_footer.ejs %>
+<!--  scripts include libraries  -->
+<script src="/common/scripts/scripts.js"></script>
+</body>
+</html>

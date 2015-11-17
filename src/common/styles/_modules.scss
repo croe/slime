@@ -1,0 +1,24 @@
+@import "vendor/bootstrap-grid";
+
+// モジュール
+//
+// 汎用的なモジュールを記述します。
+//
+// Styleguide module
+
+/*
+見出し(レベル1)
+
+最強の見出しです。
+
+Markup:
+  <h1 class="hdg_lv1">あのイーハトーヴォのすきとおった風</h1>
+
+Styleguide module.hdg1
+*/
+
+.hdg_lv1 {
+  color: #f00;
+  font-size: 60px;
+  font-weight: bold;
+}

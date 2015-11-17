@@ -1,0 +1,46 @@
+{
+    "common" : {
+        "id" : 1,
+        "url" : "www.example.com",
+        "title" : "example",
+        "keywords" : "example",
+        "description" : "example",
+        "ogtitle" : "example",
+        "ogdescription" : "example",
+        "ogurl" : "example",
+        "ogimage" : "example",
+        "ogtype" : "example"
+    },
+    "page" : [
+        {
+            "id" : 1,
+            "path" : "",
+            "filename" : "index",
+            "template" : "index_template.ejs",
+            "title" : "index",
+            "keywords" : "example",
+            "description" : "example",
+            "ogtitle" : "example",
+            "ogdescription" : "hage",
+            "ogurl" : "example",
+            "ogimage" : "example",
+            "ogtype" : "example",
+            "GA" : "UA-XXXXX"
+        },
+        {
+            "id" : 2,
+            "path" : "top/",
+            "filename" : "index",
+            "template" : "detail_template.ejs",
+            "title" : "index",
+            "keywords" : "example",
+            "description" : "example",
+            "ogtitle" : "example",
+            "ogdescription" : "example",
+            "ogurl" : "example",
+            "ogimage" : "example",
+            "ogtype" : "example",
+            "GA" : "UA-XXXXX"
+        }
+    ]
+}
