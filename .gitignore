@@ -1,0 +1,28 @@
+# NPM
+node_modules/
+npm-debug.log
+
+# 出力用フォルダを無視
+dist/
+
+# キャッシュフォルダを無視
+.sass-cache/
+.idea/
+
+# 下階層全てのフォルダ内で ".DS_Store" ファイルを無視
+*/.DS_Store
+
+# 下階層全てのフォルダ内で拡張子が .psd のファイルを無視
+*/*.psd
+
+# トップ階層の .exe ファイルのみを無視
+# ただしサブフォルダ内の .exe ファイルは無視しない
+/*.exe
+
+# 書き出しドキュメント
+kss/
+coverage/
+jsdoc/
+
+# 一時フォルダ
+tmp/
