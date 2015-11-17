@@ -1,6 +1,3 @@
-<%
-var id = common.id;//pageIDを定義
--%>
 
 <!DOCTYPE html>
 <!--[if IE 8]><html lang="ja" class="ie ie8" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns#"><![endif]-->
@@ -11,14 +8,14 @@ var id = common.id;//pageIDを定義
     <meta http-equiv="content-language" content="ja">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<%= common.description %>">
-    <meta name="keywords" content="<%= common.keywords %>">
-    <meta property="og:title" content="<%= common.ogtitle %>">
-    <meta property="og:description" content="<%= common.ogdescription %>">
-    <meta property="og:url" content="<%= common.ogurl %>">
-    <meta property="og:image" content="<%= common.ogimage %>">
-    <meta property="og:type" content="<%= common.ogtype %>">
-    <title><%= common.title %></title>
+    <meta name="description" content="Flexible Framework For Static Webpage">
+    <meta name="keywords" content="javascript">
+    <meta property="og:title" content="SLIME - Flexible Framework For Static Webpage">
+    <meta property="og:description" content="Flexible Framework For Static Webpage">
+    <meta property="og:url" content="slime.github.io">
+    <meta property="og:image" content="/common/images/ogpimage.png">
+    <meta property="og:type" content="website">
+    <title>SLIME - Flexible Framework For Static Webpage</title>
     <link rel="canonical" href="">
     <link href="" rel="alternate" hreflang="ja">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -30,7 +27,27 @@ var id = common.id;//pageIDを定義
     <script src="/common/scripts/modernizr.js"></script>
 </head>
 <body id="documents">
-<% include ../common/ejs_include/_header.ejs %>
+<nav id="navigation" class="clearfix">
+    <a href="/" class="title">SLIME</a>
+    <ul class="menu">
+        <li><a href="/documents/document.html">documents</a></li>
+        <li><a href="/documents/usage.html">usage</a></li>
+        <li><a href="https://github.com/croe/slime/" target="_blank">download</a></li>
+    </ul>
+    <a class="menu-trigger" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+</nav>
+<header id="header">
+    <div class="main">
+        <h1 class="hdg-lv1">SLIME<span> 1.0</span></h1>
+        <p class="txt-lead isSlime">Flexible framework <br class="hidden-sm">for Static webpage</p>
+    </div>
+    <canvas id="canvas" resize></canvas>
+</header>
+
 <div id="container">
     <section id="concept">
         <h2 class="hdg-lv2">Concept</h2>
@@ -47,13 +64,47 @@ var id = common.id;//pageIDを定義
                         このフレームワークの制作において、アドバイスを頂いたすべての方、特にベースとなる技術を数多く提供頂いたYoshiki Yamamotoに、心から感謝の気持ちと御礼を申し上げたく、謝辞にかえさせていただきます｡Akihiro Kato</p>
                     </p>
                 </div>
-                <% include ../common/ejs_include/_categories.ejs %>
+                <div class="col-xs-12 col-sm-3">
+    <ul class="side">
+        <li><a href="/documents/">Concept</a></li>
+        <li><a href="/documents/usage.html">Usage</a></li>
+        <li><a href="/documents/document.html">Document</a></li>
+        <!--<li><a href="/documents/directories.html">Directories</a></li>-->
+        <!--<li><a href="/documents/markup.html">HTML</a></li>-->
+        <!--<li><a href="/documents/scripts.html">Scripts</a></li>-->
+        <!--<li><a href="/documents/styles.html">Styles</a></li>-->
+    </ul>
+</div>
             </div>
         </div>
     </section>
-    <% include ../common/ejs_include/_share.ejs %>
+    <section class="share">
+    <div class="row">
+        <div class="col-sm-12">
+            <ul>
+                <li><a href="http://www.facebook.com/sharer.php?u=http://croe.github.io/slime/&amp;t=柔軟な制作を実現するフレームワーク「SLIME」" onClick="window.open(encodeURI(decodeURI(this.href)),'sharewindow', 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;" class="btn-circle is-facebook"><i class="icon-facebook"></i></a></li>
+                <li><a href="http://twitter.com/intent/tweet?text=柔軟な制作を実現するフレームワーク「SLIME」&amp;url=http://croe.github.io/slime&amp;via=croev" onClick="window.open(encodeURI(decodeURI(this.href)),'tweetwindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=1'); return false;" class="btn-circle is-twitter"><i class="icon-twitter"></i></a></li>
+                <li><a href="https://github.com/croe/slime/" class="btn-circle is-github" target="_blank"><i class="icon-github"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
 </div>
-<% include ../common/ejs_include/_footer.ejs %>
+<a href="#concept" class="js-pagetop btn-circle"><i class="icon-angle-up"></i></a>
+<footer id="footer">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.4&appId=766963216677492";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    <!--<div class="fb-like"></div>-->
+    <!--<a href="https://twitter.com/share" class="twitter-share-button" data-via="croev">Tweet</a>-->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <p>Created by <a href="https://twitter.com/croev" target="_blank">@croev</a></p>
+</footer>
 <!--  scripts include libraries  -->
 <script src="/common/scripts/scripts.js"></script>
 <!-- paper.js -->
