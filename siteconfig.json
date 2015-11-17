@@ -1,0 +1,46 @@
+{
+    "common" : {
+        "id" : 1,
+        "url" : "slime.github.io",
+        "title" : "SLIME - Flexible Framework For Static Webpage",
+        "keywords" : "javascript",
+        "description" : "Flexible Framework For Static Webpage",
+        "ogtitle" : "SLIME - Flexible Framework For Static Webpage",
+        "ogdescription" : "Flexible Framework For Static Webpage",
+        "ogurl" : "slime.github.io",
+        "ogimage" : "/common/images/ogpimage.png",
+        "ogtype" : "website"
+    },
+    "page" : [
+        {
+            "id" : 1,
+            "path" : "/",
+            "filename" : "index",
+            "template" : "template",
+            "title" : "index",
+            "keywords" : "example",
+            "description" : "example",
+            "ogtitle" : "example",
+            "ogdescription" : "example",
+            "ogurl" : "example",
+            "ogimage" : "example",
+            "ogtype" : "example",
+            "GA" : "UA-XXXXX"
+        },
+        {
+            "id" : 2,
+            "path" : "/top",
+            "filename" : "index",
+            "template" : "template",
+            "title" : "index",
+            "keywords" : "example",
+            "description" : "example",
+            "ogtitle" : "example",
+            "ogdescription" : "example",
+            "ogurl" : "example",
+            "ogimage" : "example",
+            "ogtype" : "example",
+            "GA" : "UA-XXXXX"
+        }
+    ]
+}

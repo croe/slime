@@ -1,0 +1,183 @@
+<%
+var id = common.id;//pageIDを定義
+-%>
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="ja" class="ie ie8" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns#"><![endif]-->
+<!--[if IE 9]><html lang="ja" class="ie ie9" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns#"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns#"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="ja">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<%= common.description %>">
+    <meta name="keywords" content="<%= common.keywords %>">
+    <meta property="og:title" content="<%= common.ogtitle %>">
+    <meta property="og:description" content="<%= common.ogdescription %>">
+    <meta property="og:url" content="<%= common.ogurl %>">
+    <meta property="og:image" content="<%= common.ogimage %>">
+    <meta property="og:type" content="<%= common.ogtype %>">
+    <title><%= common.title %></title>
+    <link rel="canonical" href="">
+    <link href="" rel="alternate" hreflang="ja">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!--  stylesheet  -->
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/common/css/styles.css">
+    <!--  modernizr -->
+    <script src="/common/js/modernizr.js"></script>
+</head>
+<body id="documents">
+<% include ../common/ejs_include/_header.ejs %>
+<div id="container">
+    <section id="styles">
+        <h2 class="hdg-lv2">styles</h2>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-xs-12 col-sm-9">
+                    <p>SLIMEはモジュール単位での開発を基本思想としています。</p>
+                    <p>そして最適なユーザビリティを提供するため、リクエスト数の削減を行うことを推奨しています。</p><br>
+                    <p>
+                        CSSの記述はSCSS記法を採用しています。もちろん他の拡張言語を使用することも可能です。<br>
+                        SCSSを採用することにより、モジュール単位の開発が容易に、かつこれまでのCSSの資産も記述を変えることなく使用することができるためです。<br>
+                        SLIMEは標準としてSMACSS記法をファイルとして分割した管理をしており、より管理・開発しやすいよう設計されています。<br>
+                    </p>
+                    <p>
+                        styles.scssに使用するモジュールをインポートすることにより、スタイルの一本化が可能です。<br>
+                        ユーティリティーとしていくつかのライブラリも提供しています。
+                    </p>
+                </div>
+                <% include ../common/ejs_include/_categories.ejs %>
+            </div>
+        </div>
+    </section>
+    <% include ../common/ejs_include/_share.ejs %>
+</div>
+<% include ../common/ejs_include/_footer.ejs %>
+<!--  scripts include libraries  -->
+<script src="/common/js/scripts.js"></script>
+<!-- paper.js -->
+<script src="/common/js/paper-full.min.js"></script>
+<script type="text/paperscript" canvas="canvas">
+    // Ported from original Metaball script by SATO Hiroyuki
+    // http://park12.wakwak.com/~shp/lc/et/en_aics_script.html
+    project.currentStyle = {
+        fillColor: '#8EC31F'
+    };
+
+    var ballPositions = [[255, 129], [610, 73], [486, 363],
+        [117, 459], [-70, 70], [843, 306], [789, 615], [1049, 82],
+        [1292, 428], [1700, 55], [1352, 86], [1600, 400]];
+
+    var handle_len_rate = 2.4;
+    var circlePaths = [];
+    var radius = 50;
+    for (var i = 0, l = ballPositions.length; i < l; i++) {
+        var circlePath = new Path.Circle({
+            center: ballPositions[i],
+            radius: 70
+        });
+        circlePaths.push(circlePath);
+    }
+
+    var largeCircle = new Path.Circle({
+        center: [676, 433],
+        radius: 100
+    });
+    circlePaths.push(largeCircle);
+
+    function onMouseMove(event) {
+        largeCircle.position = event.point;
+        generateConnections(circlePaths);
+    }
+
+    var connections = new Group();
+    function generateConnections(paths) {
+        // Remove the last connection paths:
+        connections.children = [];
+
+        for (var i = 0, l = paths.length; i < l; i++) {
+            for (var j = i - 1; j >= 0; j--) {
+                var path = metaball(paths[i], paths[j], 0.5, handle_len_rate, 300);
+                if (path) {
+                    connections.appendTop(path);
+                    path.removeOnMove();
+                }
+            }
+        }
+    }
+
+    generateConnections(circlePaths);
+
+    // ---------------------------------------------
+    function metaball(ball1, ball2, v, handle_len_rate, maxDistance) {
+        var center1 = ball1.position;
+        var center2 = ball2.position;
+        var radius1 = ball1.bounds.width / 2;
+        var radius2 = ball2.bounds.width / 2;
+        var pi2 = Math.PI / 2;
+        var d = center1.getDistance(center2);
+        var u1, u2;
+
+        if (radius1 == 0 || radius2 == 0)
+            return;
+
+        if (d > maxDistance || d <= Math.abs(radius1 - radius2)) {
+            return;
+        } else if (d < radius1 + radius2) { // case circles are overlapping
+            u1 = Math.acos((radius1 * radius1 + d * d - radius2 * radius2) /
+                    (2 * radius1 * d));
+            u2 = Math.acos((radius2 * radius2 + d * d - radius1 * radius1) /
+                    (2 * radius2 * d));
+        } else {
+            u1 = 0;
+            u2 = 0;
+        }
+
+        var angle1 = (center2 - center1).getAngleInRadians();
+        var angle2 = Math.acos((radius1 - radius2) / d);
+        var angle1a = angle1 + u1 + (angle2 - u1) * v;
+        var angle1b = angle1 - u1 - (angle2 - u1) * v;
+        var angle2a = angle1 + Math.PI - u2 - (Math.PI - u2 - angle2) * v;
+        var angle2b = angle1 - Math.PI + u2 + (Math.PI - u2 - angle2) * v;
+        var p1a = center1 + getVector(angle1a, radius1);
+        var p1b = center1 + getVector(angle1b, radius1);
+        var p2a = center2 + getVector(angle2a, radius2);
+        var p2b = center2 + getVector(angle2b, radius2);
+
+        // define handle length by the distance between
+        // both ends of the curve to draw
+        var totalRadius = (radius1 + radius2);
+        var d2 = Math.min(v * handle_len_rate, (p1a - p2a).length / totalRadius);
+
+        // case circles are overlapping:
+        d2 *= Math.min(1, d * 2 / (radius1 + radius2));
+
+        radius1 *= d2;
+        radius2 *= d2;
+
+        var path = new Path({
+            segments: [p1a, p2a, p2b, p1b],
+            style: ball1.style,
+            closed: true
+        });
+        var segments = path.segments;
+        segments[0].handleOut = getVector(angle1a - pi2, radius1);
+        segments[1].handleIn = getVector(angle2a + pi2, radius2);
+        segments[2].handleOut = getVector(angle2b - pi2, radius2);
+        segments[3].handleIn = getVector(angle1b + pi2, radius1);
+        return path;
+    }
+
+    // ------------------------------------------------
+    function getVector(radians, length) {
+        return new Point({
+            // Convert radians to degrees:
+            angle: radians * 180 / Math.PI,
+            length: length
+        });
+    }
+    </script>
+</body>
+</html>

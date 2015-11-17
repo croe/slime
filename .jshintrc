@@ -1,0 +1,29 @@
+{
+  "curly"    : true,
+  "eqeqeq"   : true,
+  "forin"    : true,
+  "immed"    : true,
+  "newcap"   : false,
+  "noarg"    : true,
+  "noempty"  : true,
+  "nonew"    : true,
+  "undef"    : true,
+  "unused"   : true,
+  "strict"   : true,
+  "quotmark" : "single",
+  "trailing" : true,
+  "validthis": true,
+  "eqnull"   : true,
+  "esnext"   : true,
+  "node"     : true,
+  "globals": {
+    "$": true,
+    "alert": true,
+    "console": true,
+    "describe": true,
+    "it": true,
+    "navigator": true,
+    "require": true,
+    "window": true
+  }
+}

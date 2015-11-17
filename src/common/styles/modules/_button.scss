@@ -1,0 +1,63 @@
+/*
+基本ボタン
+
+Markup:
+<p class="btn_base {{modifier_class}}">Button</p>
+
+Styleguide module.button
+ */
+
+.btn-circle {
+  display: inline-block;
+  padding: 3px;
+  color: #ffffff;
+  background: #8ec31f;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  font-size: 30px;
+}
+
+.btn-circle.is-facebook {
+  background: #3b5998;
+}
+
+.btn-circle.is-twitter {
+  background: #55acee;
+}
+
+.btn-circle.is-github {
+  background: #000;
+}
+
+.btn-round {
+  display: inline-block;
+  padding: 5px 20px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #fff;
+  background: #8ec31f;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+@media (min-width: 768px) {
+  .btn-circle {
+    display: inline-block;
+    padding: 5px;
+    color: #ffffff;
+    background: #8ec31f;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    font-size: 40px;
+  }
+
+  .btn-round {
+    padding: 5px 26px;
+    font-size: 26px;
+    -webkit-border-radius: 26px;
+    -moz-border-radius: 26px;
+    border-radius: 26px;
+  }
+}

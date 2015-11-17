@@ -1,0 +1,29 @@
+.txt-lead {
+  font-size: 14px;
+  font-weight: 100;
+  color: #666;
+}
+
+.txt-lead.isSlime{
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  color: #8ec31f;
+  text-align: center;
+  margin: 43px 0 0;
+}
+
+@media (min-width: 768px) {
+  .txt-lead {
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+  }
+
+  .txt-lead.isSlime{
+    font-size: 30px!important;
+    font-weight: 400;
+    color: #8ec31f;
+    text-align: center;
+    margin: 0;
+  }
+}

@@ -1,0 +1,377 @@
+<%
+var id = common.id;//pageIDを定義
+-%>
+
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="ja" class="ie ie8" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns#"><![endif]-->
+<!--[if IE 9]><html lang="ja" class="ie ie9" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns#"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns#"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="ja">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<%= common.description %>">
+    <meta name="keywords" content="<%= common.keywords %>">
+    <meta property="og:title" content="<%= common.ogtitle %>">
+    <meta property="og:description" content="<%= common.ogdescription %>">
+    <meta property="og:url" content="<%= common.ogurl %>">
+    <meta property="og:image" content="<%= common.ogimage %>">
+    <meta property="og:type" content="<%= common.ogtype %>">
+    <title><%= common.title %></title>
+    <link rel="canonical" href="">
+    <link href="" rel="alternate" hreflang="ja">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!--  stylesheet  -->
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/common/styles/styles.css">
+    <!--  modernizr -->
+    <script src="/common/scripts/modernizr.js"></script>
+</head>
+<body id="documents">
+<% include ../common/ejs_include/_header.ejs %>
+<div id="container">
+    <section id="concept">
+        <h2 class="hdg-lv2">documents</h2>
+        <div class="row">
+            <h1>SLIME</h1>
+            <p>静的サイトを制作するための、柔軟なフレームワーク</p>
+            <h2>依存パッケージ</h2>
+            <p>Slimeを利用するには、予め以下のパッケージをインストールしておきます。</p>
+            <ul>
+                <li><a href="https://nodejs.org/en/">Node.js</a> required v4.0+
+                    <ul>
+                        <li><a href="https://nodejs.org/en/">ダウンロードページ</a>からインストーラをダウンロードして実行</li>
+                    </ul></li>
+                <li><a href="http://gulpjs.com/">Gulp</a>
+                    <ul>
+                        <li>Node.jsをインストールした状態で<code>npm install -g gulp</code>を実行</li>
+                    </ul></li>
+            </ul>
+            <h2>使い方</h2>
+            <h3>インストール</h3>
+            <ol>
+                <li>依存パッケージのインストール</li>
+                <li>Slime最新版をダウンロード</li>
+                <li>フォルダをプロジェクト名でリネーム</li>
+                <li>ターミナル、またはコマンドプロンプトを起動し対象のディレクトリまで移動</li>
+                <li>開発用npmパッケージのインストール
+                    <ul>
+                        <li><code>$ npm install</code></li>
+                    </ul></li>
+            </ol>
+            <h3>コマンド</h3>
+            <h4>メイン</h4>
+            <ul>
+                <li><code>gulp build</code>
+                    <ul>
+                        <li>デプロイ用データを<code>dist/</code>に書き出します。</li>
+                    </ul></li>
+                <li><code>gulp test</code>
+                    <ul>
+                        <li>テストを実行します。</li>
+                    </ul></li>
+                <li><code>gulp watch</code>
+                    <ul>
+                        <li><code>http://localhost:8000/</code>で<code>dist/</code>以下をローカルホスティングします。</li>
+                    </ul></li>
+                <li><code>gulp generate</code>
+                    <ul>
+                        <li><code>siteconfig.json</code>で設定した内容からテンプレートをコピーし、HTMLを出力します。</li>
+                    </ul></li>
+            </ul>
+            <h4>サブ</h4>
+            <p>いずれもメインコマンドに内包されていますが、個別で実行することも可能です。</p>
+            <ul>
+                <li><code>gulp build-precleaning</code>
+                    <ul>
+                        <li><code>gulp build</code>処理の最初に<code>dist/</code>を削除します。</li>
+                    </ul></li>
+                <li><code>gulp build-precopying</code>
+                    <ul>
+                        <li><code>src/</code>のディレクトリ構造と内容をそのまま<code>dist/</code>に書き出します。</li>
+                    </ul></li>
+                <li><code>gulp build-postcleaning</code>
+                    <ul>
+                        <li><code>dist/</code>に出力されたものから、開発時のみ使用するものを削除します。</li>
+                    </ul></li>
+                <li><code>gulp browserify</code>
+                    <ul>
+                        <li><code>src/common/scripts/scripts.js</code>を<code>dist/common/scripts/scripts.js</code>として書き出します。</li>
+                    </ul></li>
+                <li><code>gulp csscomb</code>
+                    <ul>
+                        <li><code>dist/common/styles/styles.css</code>を上書きします。</li>
+                    </ul></li>
+                <li><code>gulp ejs</code>
+                    <ul>
+                        <li><code>src/</code>以下のejsファイルを<code>dist/</code>以下に、階層を維持して書き出します。</li>
+                    </ul></li>
+                <li><code>gulp imagemin</code>
+                    <ul>
+                        <li><code>src/common/images/</code>以下のビットマップ画像を<code>dist/common/images/</code>以下に、階層を維持して書き出します。</li>
+                    </ul></li>
+                <li><code>gulp jsdoc</code>
+                    <ul>
+                        <li><code>src/jsdoc/</code>を作成します(上書き)。</li>
+                    </ul></li>
+                <li><code>gulp jshint</code>
+                    <ul>
+                        <li><code>src/common/scripts/</code>以下のJSファイルを文法チェックします。</li>
+                    </ul></li>
+                <li><code>gulp kss</code>
+                    <ul>
+                        <li><code>src/kss/</code>を作成します(上書き)。</li>
+                    </ul></li>
+                <li><code>gulp mocha</code>
+                    <ul>
+                        <li><code>test/mocha/</code>以下のJSファイルをmochaテストファイルとみなして実行します。</li>
+                    </ul></li>
+                <li><code>gulp pleeease</code>
+                    <ul>
+                        <li><code>dist/common/styles/styles.css</code>を上書きします。</li>
+                    </ul></li>
+                <li><code>gulp sass</code>
+                    <ul>
+                        <li><code>src/common/styles/styles.scss</code>を<code>dist/common/css/styles.css</code>として書き出します。</li>
+                    </ul></li>
+                <li><code>gulp uglify</code>
+                    <ul>
+                        <li><code>dist/common/scripts/scripts.js</code>を上書きします。</li>
+                    </ul></li>
+                <li><code>gulp watchify</code>
+                    <ul>
+                        <li><code>src/common/scripts/scripts.js</code>を<code>dist/common/scripts/scripts.js</code>として書き出します。</li>
+                        <li>監視モードで実行される以外は<code>gulp browserify</code>と同じ振る舞いです。</li>
+                    </ul></li>
+                <li><code>gulp webserver</code>
+                    <ul>
+                        <li><code>localhost:8000/</code>でローカルホスティングします。</li>
+                    </ul></li>
+            </ul>
+            <h3>HTML Template</h3>
+            <ul>
+                <li>ejsを使います。
+                    <ul>
+                        <li>共通パーツをモジュール化して、静的にインクルードすることができます(結合したものが書き出されます)。</li>
+                        <li>TDK・OGP等サイト設定を外部ファイル化
+                            <ul>
+                                <li>Googleスプレッドシートを利用して、非エンジニアでも容易な編集が可能です。</li>
+                                <li><code>siteconfig.json</code>にメタ情報、OGP情報などをまとめておくことで、抜け漏れを防ぎます。</li>
+                                <li><code>siteconfig.json</code>を決まった形で記述することで、ページの量産が可能です。</li>
+                            </ul></li>
+                    </ul></li>
+            </ul>
+            <h3>スクリプト</h3>
+            <ul>
+                <li>Browserifyを使います。
+                    <ul>
+                        <li>shimを使ってグローバルにjQueryを宣言するため、BrowserifyとjQueryプラグインの併用が可能です。</li>
+                        <li>JSファイルにJsDocコメントを記述することで、ドキュメントを自動生成することができます。</li>
+                        <li>JsDocコメントの書式は<a href="http://usejsdoc.org/">公式ドキュメント</a>を参照ください。</li>
+                    </ul></li>
+            </ul>
+            <h4>ディレクトリ</h4>
+            <ul>
+                <li><code>src/common/scripts/modules/</code>
+                    <ul>
+                        <li>再利用されない、プロジェクト固有なスクリプトを配置します。</li>
+                    </ul></li>
+                <li><code>src/common/scripts/vendor/</code>
+                    <ul>
+                        <li>サードパーティのスクリプトを配置します。</li>
+                    </ul></li>
+            </ul>
+            <h3>スタイルシート</h3>
+            <p><code>src/common/styles/styles.scss</code>で全てのスタイルシートファイルを集約し、1ファイルのスタイルシートとして書き出します。</p>
+            <p>スタイルシートはあらかじめ、Base、 Layout、 Module、 State、 Themeに分割されています。これはSMACSSにもとづいたものです。</p>
+            <h4>ディレクトリ</h4>
+            <ul>
+                <li><code>src/common/styles/modules/</code>
+                    <ul>
+                        <li>自前モジュールのスタイルシートを配置します。モジュールごとにファイルを分け、それらを<code>src/common/css/_modules.scss</code>で<code>@import</code>します。<code>src/common/css/_modules.scss</code>は<code>src/common/css/styles.scss</code>に<code>@import</code>されます。</li>
+                    </ul></li>
+                <li><code>src/common/styles/vendor/</code>
+                    <ul>
+                        <li>サードパーティのスタイルシートを配置します。</li>
+                    </ul></li>
+            </ul>
+            <h4>スタイルガイド (KSS)</h4>
+            <p>スタイルシートにKSSコメントを記述すると、<code>gulp kss</code>でスタイルガイドを自動生成することができます。</p>
+            <p>KSSコメントの書式は<a href="http://warpspire.com/kss/syntax/">公式ドキュメント</a>を参照ください。</p>
+            <h2>特殊なディレクトリについて</h2>
+            <ul>
+                <li><code>src/</code>
+                    <ul>
+                        <li>ソースファイルはこの中に配置します。</li>
+                    </ul></li>
+                <li><code>dist/</code>
+                    <ul>
+                        <li>デプロイファイルが書き出されます。<code>gulp build</code>のたびに<code>src/</code>の内容にもとづき最新のデプロイファイルで中身が更新されます。ディレクトリ構造はsrcの内容が引き継がれます。</li>
+                    </ul></li>
+            </ul>
+            <h2>feature</h2>
+            <ul>
+                <li>
+                    <p>webフォントの置き場 、fontello等更新しやすく・管理しやすく</p>
+                </li>
+                <li>
+                    <p>Google apps scriptsでsiteconfig.jsonを生成する</p>
+                </li>
+                <li>
+                    <p>jsonの情報を読み取ってテンプレから指定パスでHTMLを生成する。</p>
+                    <ul>
+                        <li>個別値の入力ができないため、テンプレートからコピー＆リネーム時にHTMLファイルを出力する。</li>
+                    </ul>
+                </li>
+                <li>JSDoc → ESDocへの変更</li>
+            </ul>
+            <h2>Author</h2>
+            <ul>
+                <li>
+                    <p>Akihiro Kato</p>
+                    <ul>
+                        <li>Engineer</li>
+                    </ul>
+                </li>
+                <li>Yoshiki Yamamoto
+                    <ul>
+                        <li>Engineer</li>
+                    </ul></li>
+            </ul>
+            <h2>LICENSE</h2>
+            <ul>
+                <li>Released under the <a href="https://tldrlegal.com/license/mit-license">MIT Licenses</a>.</li>
+            </ul>
+        </div>
+    </section>
+    <% include ../common/ejs_include/_share.ejs %>
+</div>
+<% include ../common/ejs_include/_footer.ejs %>
+<!--  scripts include libraries  -->
+<script src="/common/scripts/scripts.js"></script>
+<!-- paper.js -->
+<script src="/common/scripts/paper-full.min.js"></script>
+<script type="text/paperscript" canvas="canvas">
+    // Ported from original Metaball script by SATO Hiroyuki
+    // http://park12.wakwak.com/~shp/lc/et/en_aics_script.html
+    project.currentStyle = {
+        fillColor: '#8EC31F'
+    };
+
+    var ballPositions = [[255, 129], [610, 73], [486, 363],
+        [117, 459], [-70, 70], [843, 306], [789, 615], [1049, 82],
+        [1292, 428], [1700, 55], [1352, 86], [1600, 400]];
+
+    var handle_len_rate = 2.4;
+    var circlePaths = [];
+    var radius = 50;
+    for (var i = 0, l = ballPositions.length; i < l; i++) {
+        var circlePath = new Path.Circle({
+            center: ballPositions[i],
+            radius: 70
+        });
+        circlePaths.push(circlePath);
+    }
+
+    var largeCircle = new Path.Circle({
+        center: [676, 433],
+        radius: 100
+    });
+    circlePaths.push(largeCircle);
+
+    function onMouseMove(event) {
+        largeCircle.position = event.point;
+        generateConnections(circlePaths);
+    }
+
+    var connections = new Group();
+    function generateConnections(paths) {
+        // Remove the last connection paths:
+        connections.children = [];
+
+        for (var i = 0, l = paths.length; i < l; i++) {
+            for (var j = i - 1; j >= 0; j--) {
+                var path = metaball(paths[i], paths[j], 0.5, handle_len_rate, 300);
+                if (path) {
+                    connections.appendTop(path);
+                    path.removeOnMove();
+                }
+            }
+        }
+    }
+
+    generateConnections(circlePaths);
+
+    // ---------------------------------------------
+    function metaball(ball1, ball2, v, handle_len_rate, maxDistance) {
+        var center1 = ball1.position;
+        var center2 = ball2.position;
+        var radius1 = ball1.bounds.width / 2;
+        var radius2 = ball2.bounds.width / 2;
+        var pi2 = Math.PI / 2;
+        var d = center1.getDistance(center2);
+        var u1, u2;
+
+        if (radius1 == 0 || radius2 == 0)
+            return;
+
+        if (d > maxDistance || d <= Math.abs(radius1 - radius2)) {
+            return;
+        } else if (d < radius1 + radius2) { // case circles are overlapping
+            u1 = Math.acos((radius1 * radius1 + d * d - radius2 * radius2) /
+                    (2 * radius1 * d));
+            u2 = Math.acos((radius2 * radius2 + d * d - radius1 * radius1) /
+                    (2 * radius2 * d));
+        } else {
+            u1 = 0;
+            u2 = 0;
+        }
+
+        var angle1 = (center2 - center1).getAngleInRadians();
+        var angle2 = Math.acos((radius1 - radius2) / d);
+        var angle1a = angle1 + u1 + (angle2 - u1) * v;
+        var angle1b = angle1 - u1 - (angle2 - u1) * v;
+        var angle2a = angle1 + Math.PI - u2 - (Math.PI - u2 - angle2) * v;
+        var angle2b = angle1 - Math.PI + u2 + (Math.PI - u2 - angle2) * v;
+        var p1a = center1 + getVector(angle1a, radius1);
+        var p1b = center1 + getVector(angle1b, radius1);
+        var p2a = center2 + getVector(angle2a, radius2);
+        var p2b = center2 + getVector(angle2b, radius2);
+
+        // define handle length by the distance between
+        // both ends of the curve to draw
+        var totalRadius = (radius1 + radius2);
+        var d2 = Math.min(v * handle_len_rate, (p1a - p2a).length / totalRadius);
+
+        // case circles are overlapping:
+        d2 *= Math.min(1, d * 2 / (radius1 + radius2));
+
+        radius1 *= d2;
+        radius2 *= d2;
+
+        var path = new Path({
+            segments: [p1a, p2a, p2b, p1b],
+            style: ball1.style,
+            closed: true
+        });
+        var segments = path.segments;
+        segments[0].handleOut = getVector(angle1a - pi2, radius1);
+        segments[1].handleIn = getVector(angle2a + pi2, radius2);
+        segments[2].handleOut = getVector(angle2b - pi2, radius2);
+        segments[3].handleIn = getVector(angle1b + pi2, radius1);
+        return path;
+    }
+
+    // ------------------------------------------------
+    function getVector(radians, length) {
+        return new Point({
+            // Convert radians to degrees:
+            angle: radians * 180 / Math.PI,
+            length: length
+        });
+    }
+    </script>
+</body>
+</html>

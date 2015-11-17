@@ -1,0 +1,404 @@
+<%
+var id = common.id;//pageIDを定義
+-%>
+
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="ja" class="ie ie8" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns#"><![endif]-->
+<!--[if IE 9]><html lang="ja" class="ie ie9" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns#"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns#"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="ja">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<%= common.description %>">
+    <meta name="keywords" content="<%= common.keywords %>">
+    <meta property="og:title" content="<%= common.ogtitle %>">
+    <meta property="og:description" content="<%= common.ogdescription %>">
+    <meta property="og:url" content="<%= common.ogurl %>">
+    <meta property="og:image" content="<%= common.ogimage %>">
+    <meta property="og:type" content="<%= common.ogtype %>">
+    <title><%= common.title %></title>
+    <link rel="canonical" href="">
+    <link href="" rel="alternate" hreflang="ja">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!--  stylesheet  -->
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/common/css/styles.css">
+    <!--  modernizr -->
+    <script src="/common/js/modernizr.js"></script>
+</head>
+<body id="documents">
+<% include ../common/ejs_include/_header.ejs %>
+<div id="container">
+    <section id="directories">
+        <h2 class="hdg-lv2">directories</h2>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-xs-12 col-sm-9">
+                    <p>
+                        SLIMEの大きな特徴のひとつが、ディレクトリ構造です。<br>
+                        プロジェクトのワークフローにおいて柔軟に適応できることを意識しているため、フレームワークとしてできるだけ影響を与えないことを念頭に設計されています。
+                    </p>
+                    <p class="txt-sub"><i class="icon-ok"></i>パッケージのインストール・プロダクトを出力した形です。</p>
+                    <table class="lists">
+                        <tbody>
+                            <tr>
+                                <td class="stored"><i class="icon-folder"></i>dist</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="stored"><i class="icon-folder"></i>src</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="stored"><i class="icon-folder"></i>common</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-folder"></i>styles</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-folder"></i>vendor</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-folder"></i>modules</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-folder"></i>utilities</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-doc-text"></i>styles.scss</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-doc-text"></i>_base.scss</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-doc-text"></i>_layout.scss</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-doc-text"></i>_module.scss</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-doc-text"></i>_state.scss</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-doc-text"></i>_theme.scss</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-folder"></i>scripts</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-folder"></i>vendor</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-folder"></i>modules</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-folder"></i>utilities</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-doc-text"></i>scripts.js</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-folder"></i>images</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="stored"><i class="icon-folder"></i>ejs_include</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="stored"><i class="icon-folder"></i>ejs_template</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="stored"><i class="icon-folder"></i>node_modules</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="stored"><i class="icon-doc-text"></i>package.json</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="stored"><i class="icon-doc-text"></i>gulpfile.js</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="stored"><i class="icon-doc-text"></i>siteconfig.json</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="stored"><i class="icon-doc-text"></i>.gitignore</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="stored"><i class="icon-doc-text"></i>README.md</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="stored"><i class="icon-doc-text"></i>LICENSE</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4><i class="icon-folder"></i>dist</h4>
+                    <p>最新のプロダクトが出力されます。このディレクトリは常に更新されるため、ここでの変更はSLIMEの管理に含むことができません。</p>
+                    <h4><i class="icon-folder"></i>src</h4>
+                    <p>開発用のコードはここが管理します。ビルド時に開発用のディレクトリ・ファイルのみが削除され、ディレクトリ構造を保持したままdistに出力されます。srcディレクトリ内のディレクトリ名・ファイル名・ディレクトリ構造はほとんど全てが変更可能なので、プロジェクト毎に柔軟に対応できます。またビルドの際は置かれたファイルはすべてそのままのディレクトリ構造保ち出力されるので、シンプルに考えることができます。ディレクトリ名等を変更する際は、gulpfile.js内のPATHをいくつか修正してください。</p>
+                    <h4><i class="icon-folder"></i>src/common/js</h4>
+                    <p>scriptはこのディレクトリでの管理を推奨します。scripts.jsに処理を記述することで一本化されます。ビルド時にmodulesディレクトリは削除されます。</p>
+                    <h4><i class="icon-folder"></i>src/common/js/modules</h4>
+                    <p>scripts.jsで一本化されるモジュールはこのディレクトリでの管理を推奨します。下層のutilitiesディレクトリではいくつかの基本ライブラリを提供しています。</p>
+                    <h4><i class="icon-folder"></i>src/common/css</h4>
+                    <p>styleはこのディレクトリで管理を推奨します。styles.scssに採用するスタイルのモジュールを指定することで一本化されます。ビルド時にmodulesディレクトリは削除されます。</p>
+                    <h4><i class="icon-folder"></i>src/common/css/modules</h4>
+                    <p>styles.scssで一本化されるモジュールはこのディレクトリでの管理を推奨します。下層のutilitiesディレクトリではいくつかの基本ライブラリを提供しています。</p>
+                    <h4><i class="icon-folder"></i>src/common/images</h4>
+                    <p>画像などはこのディレクトリでの管理を推奨します。ビルド時に.jpg/.pngは圧縮されます。</p>
+                    <h4><i class="icon-folder"></i>src/common/ejs_template</h4>
+                    <p>このディレクトリは暫定的に配置されています。ejsのインクルードする部品等が管理されます。ビルド時に削除されます。</p>
+                    <h4><i class="icon-doc-text"></i>package.json</h4>
+                    <p>プロジェクトのバージョンや開発に使用するプラグインなどが管理されます。</p>
+                    <h4><i class="icon-doc-text"></i>siteconfig.json</h4>
+                    <p>サイト設定ファイルです。共通のタイトルやディスクリプション、キーワードなどが外部化されています。HTMLテンプレートを活用する際に使用します。</p>
+                    <h4><i class="icon-doc-text"></i>gulpfile.js</h4>
+                    <p>自動化する処理が管理されます。</p>
+                    <h4><i class="icon-doc-text"></i>README.md</h4>
+                    <p>プロジェクトの情報を管理します。Wikiのように使用してください。</p>
+                    <h4><i class="icon-doc-text"></i>.gitignore</h4>
+                    <p>バージョン管理から除外する記述を行います。初期設定がされています。</p>
+                </div>
+                <% include ../common/ejs_include/_categories.ejs %>
+            </div>
+        </div>
+    </section>
+    <% include ../common/ejs_include/_share.ejs %>
+</div>
+<% include ../common/ejs_include/_footer.ejs %>
+<!--  scripts include libraries  -->
+<script src="/common/js/scripts.js"></script>
+<!-- paper.js -->
+<script src="/common/js/paper-full.min.js"></script>
+<script type="text/paperscript" canvas="canvas">
+    // Ported from original Metaball script by SATO Hiroyuki
+    // http://park12.wakwak.com/~shp/lc/et/en_aics_script.html
+    project.currentStyle = {
+        fillColor: '#8EC31F'
+    };
+
+    var ballPositions = [[255, 129], [610, 73], [486, 363],
+        [117, 459], [-70, 70], [843, 306], [789, 615], [1049, 82],
+        [1292, 428], [1700, 55], [1352, 86], [1600, 400]];
+
+    var handle_len_rate = 2.4;
+    var circlePaths = [];
+    var radius = 50;
+    for (var i = 0, l = ballPositions.length; i < l; i++) {
+        var circlePath = new Path.Circle({
+            center: ballPositions[i],
+            radius: 70
+        });
+        circlePaths.push(circlePath);
+    }
+
+    var largeCircle = new Path.Circle({
+        center: [676, 433],
+        radius: 100
+    });
+    circlePaths.push(largeCircle);
+
+    function onMouseMove(event) {
+        largeCircle.position = event.point;
+        generateConnections(circlePaths);
+    }
+
+    var connections = new Group();
+    function generateConnections(paths) {
+        // Remove the last connection paths:
+        connections.children = [];
+
+        for (var i = 0, l = paths.length; i < l; i++) {
+            for (var j = i - 1; j >= 0; j--) {
+                var path = metaball(paths[i], paths[j], 0.5, handle_len_rate, 300);
+                if (path) {
+                    connections.appendTop(path);
+                    path.removeOnMove();
+                }
+            }
+        }
+    }
+
+    generateConnections(circlePaths);
+
+    // ---------------------------------------------
+    function metaball(ball1, ball2, v, handle_len_rate, maxDistance) {
+        var center1 = ball1.position;
+        var center2 = ball2.position;
+        var radius1 = ball1.bounds.width / 2;
+        var radius2 = ball2.bounds.width / 2;
+        var pi2 = Math.PI / 2;
+        var d = center1.getDistance(center2);
+        var u1, u2;
+
+        if (radius1 == 0 || radius2 == 0)
+            return;
+
+        if (d > maxDistance || d <= Math.abs(radius1 - radius2)) {
+            return;
+        } else if (d < radius1 + radius2) { // case circles are overlapping
+            u1 = Math.acos((radius1 * radius1 + d * d - radius2 * radius2) /
+                    (2 * radius1 * d));
+            u2 = Math.acos((radius2 * radius2 + d * d - radius1 * radius1) /
+                    (2 * radius2 * d));
+        } else {
+            u1 = 0;
+            u2 = 0;
+        }
+
+        var angle1 = (center2 - center1).getAngleInRadians();
+        var angle2 = Math.acos((radius1 - radius2) / d);
+        var angle1a = angle1 + u1 + (angle2 - u1) * v;
+        var angle1b = angle1 - u1 - (angle2 - u1) * v;
+        var angle2a = angle1 + Math.PI - u2 - (Math.PI - u2 - angle2) * v;
+        var angle2b = angle1 - Math.PI + u2 + (Math.PI - u2 - angle2) * v;
+        var p1a = center1 + getVector(angle1a, radius1);
+        var p1b = center1 + getVector(angle1b, radius1);
+        var p2a = center2 + getVector(angle2a, radius2);
+        var p2b = center2 + getVector(angle2b, radius2);
+
+        // define handle length by the distance between
+        // both ends of the curve to draw
+        var totalRadius = (radius1 + radius2);
+        var d2 = Math.min(v * handle_len_rate, (p1a - p2a).length / totalRadius);
+
+        // case circles are overlapping:
+        d2 *= Math.min(1, d * 2 / (radius1 + radius2));
+
+        radius1 *= d2;
+        radius2 *= d2;
+
+        var path = new Path({
+            segments: [p1a, p2a, p2b, p1b],
+            style: ball1.style,
+            closed: true
+        });
+        var segments = path.segments;
+        segments[0].handleOut = getVector(angle1a - pi2, radius1);
+        segments[1].handleIn = getVector(angle2a + pi2, radius2);
+        segments[2].handleOut = getVector(angle2b - pi2, radius2);
+        segments[3].handleIn = getVector(angle1b + pi2, radius1);
+        return path;
+    }
+
+    // ------------------------------------------------
+    function getVector(radians, length) {
+        return new Point({
+            // Convert radians to degrees:
+            angle: radians * 180 / Math.PI,
+            length: length
+        });
+    }
+    </script>
+</body>
+</html>

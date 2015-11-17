@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?94475064');
+  src: url('../font/fontello.eot?94475064#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff?94475064') format('woff'),
+       url('../font/fontello.ttf?94475064') format('truetype'),
+       url('../font/fontello.svg?94475064#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?94475064#fontello') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-firefox:before { content: '\e800'; } /* '' */
+.icon-chrome:before { content: '\e801'; } /* '' */
+.icon-ie:before { content: '\e802'; } /* '' */
+.icon-ok:before { content: '\e803'; } /* '' */
+.icon-cancel:before { content: '\e804'; } /* '' */
+.icon-plus:before { content: '\e805'; } /* '' */
+.icon-minus:before { content: '\e806'; } /* '' */
+.icon-quote-left:before { content: '\e807'; } /* '' */
+.icon-quote-right:before { content: '\e808'; } /* '' */
+.icon-share:before { content: '\e809'; } /* '' */
+.icon-cog-alt:before { content: '\e80a'; } /* '' */
+.icon-folder:before { content: '\e80b'; } /* '' */
+.icon-folder-open-empty:before { content: '\e80c'; } /* '' */
+.icon-folder-open:before { content: '\e80d'; } /* '' */
+.icon-folder-empty:before { content: '\e80e'; } /* '' */
+.icon-doc-text:before { content: '\e80f'; } /* '' */
+.icon-angle-left:before { content: '\e810'; } /* '' */
+.icon-angle-right:before { content: '\e811'; } /* '' */
+.icon-angle-up:before { content: '\e812'; } /* '' */
+.icon-angle-down:before { content: '\e813'; } /* '' */
+.icon-angle-circled-left:before { content: '\e814'; } /* '' */
+.icon-angle-circled-right:before { content: '\e815'; } /* '' */
+.icon-angle-circled-up:before { content: '\e816'; } /* '' */
+.icon-angle-circled-down:before { content: '\e817'; } /* '' */
+.icon-shuffle:before { content: '\e818'; } /* '' */
+.icon-level-down:before { content: '\e819'; } /* '' */
+.icon-level-up:before { content: '\e81a'; } /* '' */
+.icon-desktop:before { content: '\e81b'; } /* '' */
+.icon-tablet:before { content: '\e81c'; } /* '' */
+.icon-mobile:before { content: '\e81d'; } /* '' */
+.icon-globe:before { content: '\e81e'; } /* '' */
+.icon-sitemap:before { content: '\e81f'; } /* '' */
+.icon-cubes:before { content: '\e820'; } /* '' */
+.icon-recycle:before { content: '\e821'; } /* '' */
+.icon-database:before { content: '\e822'; } /* '' */
+.icon-css3:before { content: '\e823'; } /* '' */
+.icon-facebook:before { content: '\e824'; } /* '' */
+.icon-facebook-squared:before { content: '\e825'; } /* '' */
+.icon-github-squared:before { content: '\e826'; } /* '' */
+.icon-github-circled:before { content: '\e827'; } /* '' */
+.icon-github:before { content: '\e828'; } /* '' */
+.icon-git:before { content: '\e829'; } /* '' */
+.icon-html5:before { content: '\e82a'; } /* '' */
+.icon-twitter:before { content: '\e82b'; } /* '' */
+.icon-puzzle:before { content: '\e82c'; } /* '' */

@@ -1,0 +1,250 @@
+/*
+ナビゲーション
+
+グローバルナビゲーションです。
+
+Markup:
+<p class="btn_base {{modifier_class}}">Button</p>
+
+Styleguide module.navigation
+ */
+
+#navigation {
+  position: relative;
+  padding: 0;
+  background: #8ec31f;
+  z-index: 2;
+}
+
+.title {
+  font-size: 24px;
+  color: #ffffff;
+  display: table;
+  margin: 8px 0 0 8px;
+  float: left;
+  text-decoration: none;
+}
+
+.menu {
+  position: absolute;
+  display: table;
+  margin: 0;
+  width: 100%;
+  float: right;
+  padding: 0;
+  top: 42px;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu.active {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.menu li {
+  display: block;
+  background: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid #8EC31F;
+}
+
+.menu li:last-child {
+  border-bottom: none;
+}
+
+.menu li a {
+  display: block;
+  color: #333;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+#documents .main {
+  display: none;
+}
+
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+.menu-trigger {
+  position: absolute;
+  width: 25px;
+  height: 23px;
+  top: 10px;
+  right: 10px;
+}
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+}
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.menu-trigger span:nth-of-type(2) {
+  top: 10px;
+}
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+.menu-trigger.active::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  content: '';
+  width: 33px;
+  height: 33px;
+  margin: -18px 0 0 -18px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  transition: all .75s;
+}
+.menu-trigger::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  content: '';
+  width: 33px;
+  height: 33px;
+  margin: -18px 0 0 -18px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transition: all .75s;
+}
+.menu-trigger.active span:nth-of-type(1) {
+  -webkit-transform: translateY(10px) rotate(-45deg);
+  transform: translateY(10px) rotate(-45deg);
+}
+.menu-trigger.active span:nth-of-type(2) {
+  left: 60%;
+  opacity: 0;
+  -webkit-animation: active-menu-bar02 .8s forwards;
+  animation: active-menu-bar02 .8s forwards;
+}
+@-webkit-keyframes active-menu-bar02 {
+  100% {
+    height: 0;
+  }
+}
+@keyframes active-menu-bar02 {
+  100% {
+    height: 0;
+  }
+}
+.menu-trigger.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-10px) rotate(45deg);
+  transform: translateY(-10px) rotate(45deg);
+}
+.menu-trigger.active::after {
+  -webkit-animation: circle .4s .25s forwards;
+  animation: circle .4s .25s forwards;
+}
+@-webkit-keyframes circle {
+  0% {
+    border-color: transparent;
+    -webkit-transform: rotate(0);
+  }
+  25% {
+    border-color: transparent #fff transparent transparent;
+  }
+  50% {
+    border-color: transparent #fff #fff transparent;
+  }
+  75% {
+    border-color: transparent #fff #fff #fff;
+  }
+  100% {
+    border-color: #fff;
+    -webkit-transform: rotate(-680deg);
+  }
+}
+@keyframes circle {
+  0% {
+    border-color: transparent;
+    transform: rotate(0);
+  }
+  25% {
+    border-color: transparent #fff transparent transparent;
+  }
+  50% {
+    border-color: transparent #fff #fff transparent;
+  }
+  75% {
+    border-color: transparent #fff #fff #fff;
+  }
+  100% {
+    border-color: #fff;
+    transform: rotate(-680deg);
+  }
+}
+
+
+@media (min-width: 768px) {
+  .menu {
+    position: static;
+    display: table;
+    margin: 0;
+    width: 310px;
+    float: right;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  .menu li {
+    display: table-cell;
+    background: none;
+    border: none;
+  }
+
+  .menu li a {
+    display: block;
+    color: #ffffff;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 5px 15px;
+    margin: 5px;
+    border: 1px solid #ffffff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+  }
+
+  .menu li a:hover {
+    background: #ffffff;
+    color: #8ec31f;
+    opacity: 1 !important;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  .menu-trigger {
+    display: none;
+  }
+}
