@@ -3,12 +3,12 @@
         "id" : 1,
         "url" : "http://croe.github.io/slime",
         "title" : "SLIME - Flexible Framework For Static Webpage",
-        "keywords" : "javascript",
+        "keywords" : "slime,boilerplate,javascript,node,gulp,browserify",
         "description" : "Flexible Framework For Static Webpage",
         "ogtitle" : "SLIME - Flexible Framework For Static Webpage",
         "ogdescription" : "Flexible Framework For Static Webpage",
         "ogurl" : "http://croe.github.io/slime",
-        "ogimage" : "/common/images/ogpimage.png",
+        "ogimage" : "/slime/common/images/ogpimage.png",
         "ogtype" : "website"
     },
     "page" : [
