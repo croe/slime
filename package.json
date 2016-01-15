@@ -1,13 +1,13 @@
 {
-  "name": "slime",
+  "name": "SLIME",
   "version": "1.0.0",
-  "description": "",
+  "description": "Flexible framework for Static webpage",
   "main": "index.js",
   "scripts": {
     "test": "gulp test"
   },
-  "author": "aquaring.inc",
-  "license": "AllRightsReserved",
+  "author": "croe",
+  "license": "MIT",
   "devDependencies": {
     "browserify": "^11.1.0",
     "chai": "^3.3.0",
@@ -15,7 +15,6 @@
     "glob": "^5.0.14",
     "gulp": "^3.9.0",
     "gulp-cached": "^1.1.0",
-    "gulp-compass": "^2.1.0",
     "gulp-csscomb": "^3.0.6",
     "gulp-ejs": "^1.2.0",
     "gulp-imagemin": "^2.3.0",
