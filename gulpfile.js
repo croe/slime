@@ -260,7 +260,7 @@ gulp.task('build-precleaning', () => {
 });
 // dist生成
 gulp.task('build-precopying', () => {
-  return gulp.src('src/**/*.*', {base:'src'})
+  return gulp.src('src/**/*.*', {base:'src',dot: true})
     .pipe(gulp.dest(PATHS.dirDistSources));
 });
 // 未使用ファイル削除
