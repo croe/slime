@@ -6,7 +6,6 @@
   "scripts": {
     "test": "gulp test"
   },
-  "author": "croe",
   "license": "MIT",
   "devDependencies": {
     "browserify": "^11.1.0",
@@ -53,5 +52,17 @@
   "browser": {},
   "browserify-shim": {
     "jquery": "$"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/croe/slime.git"
+  },
+  "author": "croe",
+  "bugs": {
+    "url": "https://github.com/croe/slime/issues"
+  },
+  "homepage": "http://croe.github.io/slime/",
+  "engines" : {
+    "node" : "4.2.x"
   }
 }
